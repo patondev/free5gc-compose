@@ -1,6 +1,6 @@
-DOCKER_IMAGE_OWNER = 'free5gc'
-DOCKER_IMAGE_NAME = 'base'
-DOCKER_IMAGE_TAG = 'latest'
+DOCKER_IMAGE_OWNER = 'habibiefaried'
+DOCKER_IMAGE_NAME = 'free5gc'
+DOCKER_IMAGE_TAG = 'base'
 
 .PHONY: base
 base:
