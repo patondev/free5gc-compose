@@ -1,4 +1,5 @@
 #!/bin/bash
+## `make base` first
 docker build . -t habibiefaried/free5gc:Amf -f DockerfileAmf
 docker build . -t habibiefaried/free5gc:Ausf -f DockerfileAusf
 docker build . -t habibiefaried/free5gc:N3iwf -f DockerfileN3iwf
