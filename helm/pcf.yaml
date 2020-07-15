@@ -32,7 +32,7 @@ spec:
         run: pcf
     spec:
       containers:
-      - image: habibiefaried/free5gc:pcf
+      - image: habibiefaried/free5gc:Pcf
         name: pcf
         env:
         - name: GIN_MODE
