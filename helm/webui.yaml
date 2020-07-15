@@ -33,7 +33,7 @@ spec:
         run: webui
     spec:
       containers:
-      - image: habibiefaried/free5gc:webui
+      - image: habibiefaried/free5gc:WebUI
         name: webui
         env:
         - name: GIN_MODE
