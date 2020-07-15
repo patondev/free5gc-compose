@@ -32,7 +32,7 @@ spec:
         run: n3iwf
     spec:
       containers:
-      - image: habibiefaried/free5gc:n3iwf
+      - image: habibiefaried/free5gc:N3iwf
         name: n3iwf
         env:
         - name: GIN_MODE
