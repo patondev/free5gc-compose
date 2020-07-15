@@ -32,7 +32,7 @@ spec:
         run: udm
     spec:
       containers:
-      - image: habibiefaried/free5gc:udm
+      - image: habibiefaried/free5gc:Udm
         name: udm
         env:
         - name: GIN_MODE
