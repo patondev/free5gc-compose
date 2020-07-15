@@ -32,7 +32,7 @@ spec:
         run: ausf
     spec:
       containers:
-      - image: habibiefaried/free5gc:ausf
+      - image: habibiefaried/free5gc:Ausf
         name: ausf
         env:
         - name: GIN_MODE
