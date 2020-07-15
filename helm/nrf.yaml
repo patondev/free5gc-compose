@@ -32,7 +32,7 @@ spec:
         run: nrf
     spec:
       containers:
-      - image: habibiefaried/free5gc:nrf
+      - image: habibiefaried/free5gc:Nrf
         name: nrf
         env:
         - name: GIN_MODE
