@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  name: udm
+spec:
+  ports:
+  - port: 29503
+    protocol: TCP
+    targetPort: 29503
+  selector:
+    run: udm
+---
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: udm
+  name: udm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: udm
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: udm
+    spec:
+      containers:
+      - image: habibiefaried/free5gc:udm
+        name: udm
+        env:
+        - name: GIN_MODE
+          value: release
+        ports:
+        - containerPort: 29503
+        

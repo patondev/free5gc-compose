@@ -28,4 +28,4 @@ WORKDIR /free5gc/${F5GC_MODULE}
 # Config files volume
 ADD config /free5gc/config
 
-CMD ["/bin/sh -c ","/free5gc/config/n3iwf-ipsec.sh && ./n3iwf -n3iwfcfg /free5gc/config/n3iwfcfg.conf"]
+CMD ["/bin/sh","-c","/free5gc/config/n3iwf-ipsec.sh && ./n3iwf -n3iwfcfg /free5gc/config/n3iwfcfg.conf"]

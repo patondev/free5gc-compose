@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: upf
+  name: upf
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: upf
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: upf
+    spec:
+      containers:
+      - image: habibiefaried/free5gc:upf
+        name: upf
+        env:
+        - name: GIN_MODE
+          value: release
+        securityContext:
+          capabilities:
+            add:
+            - NET_ADMIN
+
+        

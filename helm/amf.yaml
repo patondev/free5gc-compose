@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  name: amf
+spec:
+  ports:
+  - port: 29518
+    protocol: TCP
+    targetPort: 29518
+  selector:
+    run: amf
+---
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: amf
+  name: amf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: amf
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: amf
+    spec:
+      containers:
+      - image: habibiefaried/free5gc:Amf
+        name: amf
+        env:
+        - name: GIN_MODE
+          value: release
+        ports:
+        - containerPort: 29518
+        

@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  name: nrf
+spec:
+  ports:
+  - port: 29510
+    protocol: TCP
+    targetPort: 29510
+  selector:
+    run: nrf
+---
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nrf
+  name: nrf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: nrf
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: nrf
+    spec:
+      containers:
+      - image: habibiefaried/free5gc:nrf
+        name: nrf
+        env:
+        - name: GIN_MODE
+          value: release
+        - name: DB_URI
+          value: mongodb://db/free5gc
+        ports:
+        - containerPort: 29510
+        

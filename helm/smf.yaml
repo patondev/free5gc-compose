@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  name: smf
+spec:
+  ports:
+  - port: 29502
+    protocol: TCP
+    targetPort: 29502
+  selector:
+    run: smf
+---
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: smf
+  name: smf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: smf
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: smf
+    spec:
+      containers:
+      - image: habibiefaried/free5gc:smf
+        name: smf
+        env:
+        - name: GIN_MODE
+          value: release
+        ports:
+        - containerPort: 29502
+        

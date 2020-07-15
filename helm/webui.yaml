@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  name: webui
+spec:
+  ports:
+  - port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    run: webui
+  type: NodePort
+---
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: webui
+  name: webui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: webui
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: webui
+    spec:
+      containers:
+      - image: habibiefaried/free5gc:webui
+        name: webui
+        env:
+        - name: GIN_MODE
+          value: release
+        ports:
+        - containerPort: 5000
+        
