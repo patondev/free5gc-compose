@@ -18,7 +18,7 @@ spec:
         run: upf
     spec:
       containers:
-      - image: habibiefaried/free5gc:upf
+      - image: habibiefaried/free5gc:Upf
         name: upf
         env:
         - name: GIN_MODE
