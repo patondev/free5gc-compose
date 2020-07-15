@@ -16,5 +16,9 @@ docker build . -t habibiefaried/free5gc:Smf -f DockerfileSmf
 docker push habibiefaried/free5gc:Smf
 docker build . -t habibiefaried/free5gc:Udm -f DockerfileUdm
 docker push habibiefaried/free5gc:Udm
+docker build . -t habibiefaried/free5gc:Udr -f DockerfileUdr
+docker push habibiefaried/free5gc:Udr
+docker build . -t habibiefaried/free5gc:Upf -f DockerfileUpf
+docker push habibiefaried/free5gc:Upf
 docker build . -t habibiefaried/free5gc:WebUI -f DockerfileWebUI
 docker push habibiefaried/free5gc:WebUI
