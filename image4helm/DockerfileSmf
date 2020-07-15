@@ -27,3 +27,5 @@ ADD config /free5gc/config
 
 # Exposed ports
 EXPOSE 29502
+
+CMD ["./smf","-smfcfg","/free5gc/config/smfcfg.conf -uerouting /free5gc/config/uerouting.yaml"]

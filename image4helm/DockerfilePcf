@@ -27,3 +27,5 @@ ADD config /free5gc/config
 
 # Exposed ports
 EXPOSE 29507
+
+CMD ["./pcf","-pcfcfg","/free5gc/config/pcfcfg.conf"]

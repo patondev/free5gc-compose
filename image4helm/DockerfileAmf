@@ -27,3 +27,5 @@ ADD config /free5gc/config
 
 # Exposed ports
 EXPOSE 29518
+
+CMD ["./amf","-amfcfg","/free5gc/config/amfcfg.conf"]

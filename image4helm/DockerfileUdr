@@ -27,3 +27,5 @@ ADD config /free5gc/config
 
 # Exposed ports
 EXPOSE 29504
+
+CMD ["./udr","-udrcfg","/free5gc/config/udrcfg.conf"]

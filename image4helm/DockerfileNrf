@@ -27,3 +27,5 @@ ADD config /free5gc/config
 
 # Exposed ports
 EXPOSE 29510
+
+CMD ["./nrf","-nrfcfg","/free5gc/config/nrfcfg.conf"]
